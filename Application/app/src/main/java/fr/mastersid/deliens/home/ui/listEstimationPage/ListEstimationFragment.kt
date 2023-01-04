@@ -1,19 +1,13 @@
 package fr.mastersid.deliens.home.ui.listEstimationPage
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.constraintlayout.helper.widget.Carousel
-import androidx.recyclerview.widget.DividerItemDecoration
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import fr.mastersid.deliens.home.R
 import fr.mastersid.deliens.home.databinding.FragmentListEstimationBinding
 
-class ListEstimation : Fragment() {
+class ListEstimationFragment : Fragment() {
 
     private lateinit var binding: FragmentListEstimationBinding
 
