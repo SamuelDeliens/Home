@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/listEstimation"
-        android:name="fr.mastersid.deliens.home.ui.listEstimationPage.ListEstimation"
+        android:name="fr.mastersid.deliens.home.ui.listEstimationPage.ListEstimationFragment"
         android:label="fragment_list_estimation"
         tools:layout="@layout/fragment_list_estimation" />
 </navigation>
