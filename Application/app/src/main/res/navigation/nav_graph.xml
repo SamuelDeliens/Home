@@ -7,7 +7,17 @@
 
     <fragment
         android:id="@+id/homePageFragment"
-        android:name="fr.mastersid.deliens.home.ui.HomePageFragment"
+        android:name="fr.mastersid.deliens.home.ui.homePage.HomePageFragment"
         android:label="fragment_home_page"
-        tools:layout="@layout/fragment_home_page" />
+        tools:layout="@layout/fragment_home_page" >
+        <action
+            android:id="@+id/action_homePageFragment_to_listEstimation"
+            app:destination="@id/listEstimation" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/listEstimation"
+        android:name="fr.mastersid.deliens.home.ui.listEstimationPage.ListEstimation"
+        android:label="fragment_list_estimation"
+        tools:layout="@layout/fragment_list_estimation" />
 </navigation>
