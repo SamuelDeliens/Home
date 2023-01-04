@@ -17,7 +17,10 @@
         android:id="@+id/goToListEstimation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Button"
-        android:onClick="onButtonClicked"/>
+        android:background="@drawable/rounded"
+        android:textAllCaps="false"
+        android:layout_margin="20dp"
+
+        android:text="Entrer"/>
 
 </LinearLayout>
