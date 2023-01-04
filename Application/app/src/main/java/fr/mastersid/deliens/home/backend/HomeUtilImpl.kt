@@ -1,4 +1,6 @@
 package fr.mastersid.deliens.home.backend
 
-class HomeUtilImpl {
+import javax.inject.Inject
+
+class HomeUtilImpl @Inject constructor(): HomeUtil {
 }
