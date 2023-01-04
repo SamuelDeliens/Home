@@ -6,12 +6,18 @@
 
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.HomePageFragment">
+    android:layout_height="wrap_content"
+    tools:context=".ui.homePage.HomePageFragment">
 
-    <TextView
+    <Space
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="16dp"/>
+
+    <Button
+        android:id="@+id/goToListEstimation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Button"
+        android:onClick="onButtonClicked"/>
 
 </LinearLayout>
