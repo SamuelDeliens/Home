@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import fr.mastersid.deliens.home.databinding.FragmentListEstimationBinding
 
 class ListEstimationFragment : Fragment() {
@@ -23,7 +24,9 @@ class ListEstimationFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        //val intent = Intent(context, ListEstimation::class.java)
-        //startActivity(intent)
+        binding.goToNewEstimation.setOnClickListener() {
+            val action = ListEstimationFragmentDirections.actionListEstimationToEstimationFragment()
+            findNavController().navigate(action)
+        }
     }
 }

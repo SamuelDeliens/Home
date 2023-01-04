@@ -19,5 +19,14 @@
         android:id="@+id/listEstimation"
         android:name="fr.mastersid.deliens.home.ui.listEstimationPage.ListEstimationFragment"
         android:label="fragment_list_estimation"
-        tools:layout="@layout/fragment_list_estimation" />
+        tools:layout="@layout/fragment_list_estimation" >
+        <action
+            android:id="@+id/action_listEstimation_to_estimationFragment"
+            app:destination="@id/estimationFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/estimationFragment"
+        android:name="fr.mastersid.deliens.home.ui.EstimationFragment"
+        android:label="fragment_estimation"
+        tools:layout="@layout/fragment_estimation" />
 </navigation>
