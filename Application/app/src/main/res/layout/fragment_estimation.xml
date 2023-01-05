@@ -6,7 +6,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
+    android:padding="16dp"
 
     tools:context=".ui.estimationPage.EstimationFragment"
     android:orientation="vertical">
@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:text="Estimation"
+        android:text="@string/EstimationPage_MenuBarBrand_text"
         android:textSize="24sp"
         android:gravity="center"
         android:textColor="@color/colorPrimary" />
@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
 
         android:id="@+id/spinner"
-        android:entries="@array/bien_spinner_array" />
+        android:entries="@array/EstimationPag_Spinner_PropertyType" />
 
     <Space
         android:layout_width="match_parent"
@@ -114,7 +114,7 @@
         android:layout_marginHorizontal="60dp"
 
         android:id="@+id/estimation_button"
-        android:text="Estimation"
+        android:text="@string/EstimationPage_Button_text"
 
         android:textSize="16sp"
         android:textAllCaps="false"
@@ -131,7 +131,7 @@
 
         android:id="@+id/estimationResult"
 
-        android:text="Resultat Estimation"
+        android:text="@string/EstimationPage_TextView_text"
         android:textSize="20sp"/>
 
 </LinearLayout>

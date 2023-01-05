@@ -1,9 +1,23 @@
 <resources>
+    <!-- Base Application String. -->
     <string name="app_name">Home</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- SplashScreen String. -->
     <string name="splashScreen_brandText">OwnHome</string>
 
-    <string-array name="bien_spinner_array">
+    <!-- HomePage String. -->
+    <string name="HomePage_ImageView_contentDescription">BrandLogo of the application</string>
+    <string name="HomePage_Button_text">Entrer</string>
+
+    <!-- ListEstimation String. -->
+    <string name="ListEstimationPage_Button_text">Estimated another</string>
+
+    <!-- Estimation String. -->
+    <string name="EstimationPage_MenuBarBrand_text">Estimation</string>
+    <string name="EstimationPage_Button_text">Estimer</string>
+    <string name="EstimationPage_TextView_text">Resultat Estimation</string>
+    <string-array name="EstimationPag_Spinner_PropertyType">
         <item>Maison</item>
         <item>Appartement</item>
         <item>Local</item>
