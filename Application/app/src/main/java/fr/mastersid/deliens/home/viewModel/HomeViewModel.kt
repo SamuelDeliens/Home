@@ -9,7 +9,6 @@ import javax.inject.Inject
 @HiltViewModel
 class HomeViewModel @Inject constructor(
     state: SavedStateHandle,
-    private val homeUtil : HomeUtil
 ) : ViewModel() {
 
 }
