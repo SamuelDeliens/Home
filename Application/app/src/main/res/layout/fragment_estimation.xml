@@ -38,13 +38,15 @@
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id="@+id/radioButton">
 
         <RadioButton
             android:id="@+id/radio_maison"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Maison"
+            android:checked="true"
             android:textSize="20sp"
             android:gravity="center" />
 
@@ -69,7 +71,10 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Nombre Piece"
+
+        android:id="@+id/editTextRooms"
+
+        android:hint="Room number"
         android:inputType="number" />
 
     <Space
@@ -79,6 +84,9 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
+        android:id="@+id/editTextSurface"
+
         android:hint="Surface (m²)"
         android:inputType="number" />
 
@@ -90,7 +98,40 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Other"
-        android:inputType="number"/>
+
+        android:id="@+id/editTextOther"
+
+        android:hint="Other" />
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="16dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginHorizontal="60dp"
+
+        android:id="@+id/estimation_button"
+        android:text="Estimation"
+
+        android:textSize="16sp"
+        android:textAllCaps="false"
+        android:textColor="@color/colorOnPrimary"
+        android:background="@drawable/rounded"/>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="16dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/estimationResult"
+
+        android:text="Resultat Estimation"
+        android:textSize="20sp"/>
 
 </LinearLayout>
