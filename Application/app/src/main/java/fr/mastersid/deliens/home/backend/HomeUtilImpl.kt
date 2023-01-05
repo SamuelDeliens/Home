@@ -19,24 +19,24 @@ class HomeUtilImpl @Inject constructor(): HomeUtil {
         "BS" to 27, "BT" to 28, "BV" to 29, "BW" to 30
     )
 
-    override fun estimation(propertyType: String, pieces: Int, surfaceInside: Float, surfaceOutside: Float, region: String): Float {
+    override fun estimation(propertyType: String, pieces: Int, surfaceInside: Float, surfaceOutside: Float?, region: String): Float {
 
         val intPropertyType = propertyMapping[propertyType]!!
         val intRegion = regionMapping[region]!!
 
         return if (intPropertyType == 1) {
-            estimationMaison(intPropertyType, pieces, surfaceInside, surfaceOutside, intRegion)
+            estimationMaison(intPropertyType, pieces, surfaceInside, surfaceOutside!!, intRegion)
         } else {
             estimationAppartement(intPropertyType, pieces, surfaceInside, intRegion)
         }
     }
 
 
-    private fun estimationAppartement(propertyType: Int, pieces: Int, surface: Float, region: Int): Float {
-        return surface * pieces * 1000 + region
+    private fun estimationAppartement(propertyType: Int, pieces: Int, surfaceInside: Float, region: Int): Float {
+        return surfaceInside * pieces * 1000 + region
     }
 
-    private fun estimationMaison(propertyType: Int, pieces: Int, surface: Float, terrain: Float, region: Int): Float {
-        return surface * pieces * 1000 + terrain * 1000 + region
+    private fun estimationMaison(propertyType: Int, pieces: Int, surfaceInside: Float, surfaceOutside: Float, region: Int): Float {
+        return surfaceInside * pieces * 1000 + surfaceOutside * 1000 + region
     }
 }
