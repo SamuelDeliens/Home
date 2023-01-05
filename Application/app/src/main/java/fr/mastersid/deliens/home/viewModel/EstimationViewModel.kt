@@ -21,11 +21,11 @@ class EstimationViewModel @Inject constructor(
     private val _resultEstimation : MutableLiveData<EstimationResult> = state.getLiveData(STATE_ESTIMATION_RESULT, EstimationResult.Empty)
     val resultEstimation: LiveData<EstimationResult> = _resultEstimation
 
-    private val _estimationList : MutableLiveData<List<EstimationResult.Estimation>> = state.getLiveData(STATE_ESTIMATION_LIST, emptyList())
-    val estimationList: LiveData<List<EstimationResult.Estimation>> = _estimationList
+    private val _estimationList : MutableLiveData<List<EstimationResult.Estimated>> = state.getLiveData(STATE_ESTIMATION_LIST, emptyList())
+    val estimationList: LiveData<List<EstimationResult.Estimated>> = _estimationList
 
-    fun estimation(pieces: Int, surface: Float, region: String) {
-        _resultEstimation.value = EstimationResult.Estimation(pieces, surface, region, homeUtil.estimation(pieces, surface, region))
-        _estimationList.value = (_estimationList.value ?: emptyList()) + listOf(_resultEstimation.value as EstimationResult.Estimation)
+    fun estimation(propertyType: String, pieces: Int, surface: Float, region: String) {
+        _resultEstimation.value = EstimationResult.Estimated(propertyType, pieces, surface, region, homeUtil.estimation(propertyType, pieces, surface, region))
+        _estimationList.value = (_estimationList.value ?: emptyList()) + listOf(_resultEstimation.value as EstimationResult.Estimated)
     }
 }
