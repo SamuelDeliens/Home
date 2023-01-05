@@ -24,15 +24,15 @@ class EstimationViewModel @Inject constructor(
     private val _estimationList : MutableLiveData<List<EstimationResult.Estimated>> = state.getLiveData(STATE_ESTIMATION_LIST, emptyList())
     val estimationList: LiveData<List<EstimationResult.Estimated>> = _estimationList
 
-    fun estimation(propertyType: String, pieces: Int?, surface: Float?, terrain: Float?, region: String) {
+    fun estimation(propertyType: String, pieces: Int?, surfaceInside: Float?, surfaceOutside: Float?, region: String) {
         try {
-            if (pieces == null || surface == null || terrain == null) {
+            if (pieces == null || surfaceInside == null || (surfaceOutside == null && propertyType == "Maison")) {
                 throw IllegalArgumentException("Missing arguments")
             } else {
-                val estimation = homeUtil.estimation(propertyType, pieces, surface, terrain, region)
+                val estimation = homeUtil.estimation(propertyType, pieces, surfaceInside, surfaceOutside, region)
 
-                _resultEstimation.value = EstimationResult.Estimated(propertyType, pieces, surface, region, estimation)
-                _estimationList.value = _estimationList.value!! + listOf(EstimationResult.Estimated(propertyType, pieces, surface, region, estimation))
+                _resultEstimation.value = EstimationResult.Estimated(propertyType, pieces, surfaceInside, region, estimation)
+                _estimationList.value = _estimationList.value!! + listOf(EstimationResult.Estimated(propertyType, pieces, surfaceInside, region, estimation))
             }
         } catch (e: IllegalArgumentException) {
             _resultEstimation.value = EstimationResult.Failed(e.message!!)
