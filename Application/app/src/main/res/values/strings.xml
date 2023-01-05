@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Home</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="splashScreen_brandText">OwnHome</string>
+
+    <string-array name="bien_spinner_array">
+        <item>Maison</item>
+        <item>Appartement</item>
+        <item>Local</item>
+        <item>Terrain</item>
+    </string-array>
 </resources>
