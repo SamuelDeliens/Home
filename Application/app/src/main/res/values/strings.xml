@@ -10,17 +10,49 @@
     <string name="HomePage_ImageView_contentDescription">BrandLogo of the application</string>
     <string name="HomePage_Button_text">Entrer</string>
 
-    <!-- ListEstimation String. -->
+    <!-- ListEstimationPage String. -->
     <string name="ListEstimationPage_Button_text">Estimated another</string>
 
-    <!-- Estimation String. -->
+    <!-- EstimationPage String. -->
     <string name="EstimationPage_MenuBarBrand_text">Estimation</string>
     <string name="EstimationPage_Button_text">Estimer</string>
     <string name="EstimationPage_TextView_text">Resultat Estimation</string>
-    <string-array name="EstimationPag_Spinner_PropertyType">
-        <item>Maison</item>
-        <item>Appartement</item>
-        <item>Local</item>
-        <item>Terrain</item>
+    <string name="EstimationPage_RadioButton_text">Maison</string>
+    <string name="EstimationPage_RadioButton_text2">Appartement</string>
+    <string name="EstimationPage_EditText_room">Room number</string>
+    <string name="EstimationPage_EditText_surface">Surface (m²)</string>
+    <string name="EstimationPage_EditText_terrain">Terrain (m²)</string>
+    <string-array name="EstimationPage_Spinner_Region">
+        <item>AB</item>
+        <item>AC</item>
+        <item>AD</item>
+        <item>AE</item>
+        <item>AH</item>
+        <item>AI</item>
+        <item>AK</item>
+        <item>AO</item>
+        <item>AP</item>
+        <item>AR</item>
+        <item>AS</item>
+        <item>AT</item>
+        <item>AV</item>
+        <item>AW</item>
+        <item>AX</item>
+        <item>AY</item>
+        <item>AZ</item>
+        <item>BC</item>
+        <item>BD</item>
+        <item>BE</item>
+        <item>BH</item>
+        <item>BK</item>
+        <item>BL</item>
+        <item>BM</item>
+        <item>BO</item>
+        <item>BP</item>
+        <item>BR</item>
+        <item>BS</item>
+        <item>BT</item>
+        <item>BV</item>
+        <item>BW</item>
     </string-array>
 </resources>
