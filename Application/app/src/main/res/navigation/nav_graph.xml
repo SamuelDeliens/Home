@@ -26,7 +26,7 @@
     </fragment>
     <fragment
         android:id="@+id/estimationFragment"
-        android:name="fr.mastersid.deliens.home.ui.EstimationFragment"
+        android:name="fr.mastersid.deliens.home.ui.estimationPage.EstimationFragment"
         android:label="fragment_estimation"
         tools:layout="@layout/fragment_estimation" />
 </navigation>
