@@ -15,7 +15,7 @@ class ListEstimationViewModel @Inject constructor(
     state : SavedStateHandle,
 ) : ViewModel() {
 
-    private val _estimationList : MutableLiveData<List<EstimationResult.Estimation>> = state.getLiveData(STATE_ESTIMATION_LIST, emptyList())
-    val estimationList: LiveData<List<EstimationResult.Estimation>> = _estimationList
+    private val _estimationList : MutableLiveData<List<EstimationResult.Estimated>> = state.getLiveData(STATE_ESTIMATION_LIST, emptyList())
+    val estimationList: LiveData<List<EstimationResult.Estimated>> = _estimationList
 
 }
