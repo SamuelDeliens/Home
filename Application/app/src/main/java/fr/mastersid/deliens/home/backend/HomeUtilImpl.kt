@@ -4,7 +4,7 @@ import javax.inject.Inject
 
 class HomeUtilImpl @Inject constructor(): HomeUtil {
 
-    override fun estimation(pieces: Int, surface: Float, region: String): Float {
+    override fun estimation(propertyType: String, pieces: Int, surface: Float, region: String): Float {
         return pieces * surface * 1000
     }
 }
