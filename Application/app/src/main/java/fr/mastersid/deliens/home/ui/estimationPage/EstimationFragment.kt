@@ -34,16 +34,17 @@ class EstimationFragment : Fragment() {
 
 
         binding.estimationButton.setOnClickListener {
-            val radioResult: RadioButton = binding.radioButton.checkedRadioButtonId.let { id ->
+            val propertyType: RadioButton = binding.radioButton.checkedRadioButtonId.let { id ->
                 binding.root.findViewById(id)
             }
-            val propertyType = binding.spinner.selectedItem.toString()
+            val region = binding.spinner.selectedItem.toString()
 
             estimationViewModel.estimation(
-                binding.spinner.selectedItem.toString(),
+                propertyType.text.toString(),
                 binding.editTextRooms.text.toString().toInt(),
                 binding.editTextSurface.text.toString().toFloat(),
-                binding.editTextOther.text.toString()
+                binding.editTextTerrain.text.toString().toFloat(),
+                binding.spinner.selectedItem.toString(),
             )
         }
 
