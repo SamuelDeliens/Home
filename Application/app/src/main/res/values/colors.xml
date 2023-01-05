@@ -8,6 +8,9 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <color name="success">#5cb85c</color>
+    <color name="error">#d9534f</color>
+
     <color name="colorPrimary">#F24130</color>
     <color name="colorPrimaryVariant">#F24130</color>
     <color name="colorOnPrimary">#F2F0EB</color>

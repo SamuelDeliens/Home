@@ -6,7 +6,7 @@
 
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="16dp"
+    android:padding="16dp"
 
     tools:context=".ui.estimationPage.EstimationFragment"
     android:orientation="vertical">
@@ -15,25 +15,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:text="Estimation"
+        android:text="@string/EstimationPage_MenuBarBrand_text"
         android:textSize="24sp"
         android:gravity="center"
         android:textColor="@color/colorPrimary" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="16dp"/>
-
-    <Spinner
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:id="@+id/spinner"
-        android:entries="@array/bien_spinner_array" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="16dp"/>
+        android:layout_height="30dp"/>
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -45,7 +34,7 @@
             android:id="@+id/radio_maison"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Maison"
+            android:text="@string/EstimationPage_RadioButton_text"
             android:checked="true"
             android:textSize="20sp"
             android:gravity="center" />
@@ -58,11 +47,22 @@
             android:id="@+id/radio_appartement"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Appartement"
+            android:text="@string/EstimationPage_RadioButton_text2"
             android:textSize="20sp"
             android:gravity="center" />
 
     </RadioGroup>
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="16dp"/>
+
+    <Spinner
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:id="@+id/spinner"
+        android:entries="@array/EstimationPage_Spinner_Region" />
 
     <Space
         android:layout_width="match_parent"
@@ -74,7 +74,7 @@
 
         android:id="@+id/editTextRooms"
 
-        android:hint="Room number"
+        android:hint="@string/EstimationPage_EditText_room"
         android:inputType="number" />
 
     <Space
@@ -87,7 +87,7 @@
 
         android:id="@+id/editTextSurface"
 
-        android:hint="Surface (m²)"
+        android:hint="@string/EstimationPage_EditText_surface"
         android:inputType="number" />
 
     <Space
@@ -99,9 +99,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:id="@+id/editTextOther"
+        android:id="@+id/editTextTerrain"
 
-        android:hint="Other" />
+        android:hint="@string/EstimationPage_EditText_terrain"
+        android:inputType="number"/>
 
     <Space
         android:layout_width="match_parent"
@@ -114,7 +115,7 @@
         android:layout_marginHorizontal="60dp"
 
         android:id="@+id/estimation_button"
-        android:text="Estimation"
+        android:text="@string/EstimationPage_Button_text"
 
         android:textSize="16sp"
         android:textAllCaps="false"
@@ -131,7 +132,7 @@
 
         android:id="@+id/estimationResult"
 
-        android:text="Resultat Estimation"
+        android:text="@string/EstimationPage_TextView_text"
         android:textSize="20sp"/>
 
 </LinearLayout>
