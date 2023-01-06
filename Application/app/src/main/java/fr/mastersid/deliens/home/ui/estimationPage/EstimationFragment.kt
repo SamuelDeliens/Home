@@ -9,30 +9,40 @@ import android.view.ViewGroup
 import android.widget.RadioButton
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import dagger.hilt.android.AndroidEntryPoint
 import fr.mastersid.deliens.home.R
 import fr.mastersid.deliens.home.data.EstimationResult
 import fr.mastersid.deliens.home.databinding.FragmentEstimationBinding
 import fr.mastersid.deliens.home.viewModel.EstimationViewModel
+import fr.mastersid.deliens.home.viewModel.ListEstimationViewModel
 
 @AndroidEntryPoint
 class EstimationFragment : Fragment() {
 
     private lateinit var binding: FragmentEstimationBinding
-    private val estimationViewModel: EstimationViewModel by viewModels()
+    private val listEstimationViewModel: ListEstimationViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentEstimationBinding.inflate(layoutInflater)
-        return binding.root
+        val fragmentEstimation = FragmentEstimationBinding.inflate(layoutInflater)
+        binding = fragmentEstimation
+        return fragmentEstimation.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.apply {
+            lifecycleOwner = viewLifecycleOwner
+            viewModel = listEstimationViewModel
+            estimationFragment = this@EstimationFragment
+        }
+
 
         val estimationResult = binding.estimationResult
 
@@ -42,7 +52,7 @@ class EstimationFragment : Fragment() {
                 binding.root.findViewById(id)
             }
             val region = binding.spinner.selectedItem.toString()
-            estimationViewModel.estimation(
+            listEstimationViewModel.estimation(
                 propertyType.text.toString(),
                 binding.editTextRooms.text.toString().toIntOrNull(),
                 binding.editTextSurface.text.toString().toFloatOrNull(),
@@ -60,7 +70,7 @@ class EstimationFragment : Fragment() {
         }
 
 
-        estimationViewModel.resultEstimation.observe(viewLifecycleOwner) { value ->
+        listEstimationViewModel.resultEstimation.observe(viewLifecycleOwner) { value ->
             when (value) {
                 is EstimationResult.Empty -> {
                     estimationResult.visibility = View.GONE

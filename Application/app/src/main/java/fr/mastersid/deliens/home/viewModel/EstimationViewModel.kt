@@ -35,7 +35,7 @@ class EstimationViewModel @Inject constructor(
                         EstimationResult.Estimated(propertyType, pieces, surfaceInside, surfaceOutside, region, estimation)
                     )
                     _estimationList.postValue(
-                        _estimationList.value!! + listOf(EstimationResult.Estimated(propertyType, pieces, surfaceInside, surfaceOutside, region, estimation))
+                        listOf(EstimationResult.Estimated(propertyType, pieces, surfaceInside, surfaceOutside, region, estimation)) + _estimationList.value!!
                     )
                 }
             } catch (e: IllegalArgumentException) {
