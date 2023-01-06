@@ -33,10 +33,10 @@ class EstimationViewModel @Inject constructor(
 
                     val estimation = homeUtil.estimation(propertyType, pieces, surfaceInside, surfaceOutside, region)
                     _resultEstimation.postValue(
-                        EstimationResult.Estimated(propertyType, pieces, surfaceInside, region, estimation)
+                        EstimationResult.Estimated(propertyType, pieces, surfaceInside, surfaceOutside!!, region, estimation)
                     )
                     _estimationList.postValue(
-                        _estimationList.value!! + listOf(EstimationResult.Estimated(propertyType, pieces, surfaceInside, region, estimation))
+                        _estimationList.value!! + listOf(EstimationResult.Estimated(propertyType, pieces, surfaceInside, surfaceOutside, region, estimation))
                     )
                 }
             } catch (e: IllegalArgumentException) {
