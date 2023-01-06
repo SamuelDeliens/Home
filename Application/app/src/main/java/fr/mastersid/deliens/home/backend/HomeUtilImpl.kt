@@ -39,6 +39,7 @@ class HomeUtilImpl @Inject constructor(): HomeUtil {
         val intPropertyType = propertyMapping[propertyType]!!
         val intRegion = regionMapping[region]!!
 
+
         return if (intPropertyType == 1) {
             estimationMaison(pieces, surfaceInside, surfaceOutside!!, intRegion)
         } else {
