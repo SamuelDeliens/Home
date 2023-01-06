@@ -45,9 +45,7 @@ class CarouselFragment: Fragment() {
             carouselFragment = this@CarouselFragment
         }
 
-        listEstimationViewModel.initEstimationList()
-
-
+        
         val motionLayout = binding!!.motionContainer
 
         val v1 = motionLayout.get(0) //BLUE
