@@ -12,19 +12,28 @@ private const val STATE_ESTIMATION_RESULT = "state_estimation_result"
 private const val STATE_ESTIMATION_LIST = "state_estimation_list"
 
 @HiltViewModel
+/**
+ * ViewModel for the list of estimations
+ * @param homeUtil the home util
+ */
 class ListEstimationViewModel @Inject constructor(
     state : SavedStateHandle,
     private val homeUtil: HomeUtil
 ) : ViewModel() {
 
+    // The list of estimations
     private val _resultEstimation : MutableLiveData<EstimationResult> = state.getLiveData(STATE_ESTIMATION_RESULT, EstimationResult.Empty)
     val resultEstimation: LiveData<EstimationResult> = _resultEstimation
 
+    // The list of estimations
     private val _estimationList : MutableLiveData<List<EstimationResult.Estimated>> = state.getLiveData(STATE_ESTIMATION_LIST, emptyList())
     val estimationList: LiveData<List<EstimationResult.Estimated>> = _estimationList
 
 
-        fun initEstimationList() {
+    /**
+     * Initialize the list of estimations
+     */
+     fun initEstimationList() {
             if (_estimationList.value!!.isEmpty()) {
                 viewModelScope.launch(Dispatchers.Default) {
                     val initValue = arrayOf(
@@ -45,6 +54,18 @@ class ListEstimationViewModel @Inject constructor(
             }
         }
 
+        /**
+         * Estimate the price of a house
+         *
+         * @param propertyType the type of the property
+         * @param pieces the number of pieces
+         * @param surfaceInside the inside surface
+         * @param surfaceOutside the outside surface
+         * @param region the region
+         *
+         * @return the estimation result
+         * @throws Exception if the estimation failed
+         */
         fun estimation(propertyType: String, pieces: Int?, surfaceInside: Float?, surfaceOutside: Float?, region: String) {
             viewModelScope.launch(Dispatchers.Default) {
                 try {

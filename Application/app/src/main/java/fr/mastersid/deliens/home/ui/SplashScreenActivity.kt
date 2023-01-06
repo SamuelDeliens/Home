@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import fr.mastersid.deliens.home.databinding.ActivitySplashScreenBinding
 
+/**
+ * This activity is used to display a splash screen
+ */
 class SplashScreenActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

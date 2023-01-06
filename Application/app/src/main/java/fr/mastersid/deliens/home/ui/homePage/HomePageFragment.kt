@@ -26,6 +26,9 @@ class HomePageFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        /**
+         * 1. On change de fragment quand on clique sur le bouton
+         */
         binding.goToListEstimation.setOnClickListener() {
             val action = HomePageFragmentDirections.actionHomePageFragmentToListEstimation()
             findNavController().navigate(action)

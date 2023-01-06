@@ -1,6 +1,5 @@
 package fr.mastersid.deliens.home.viewModel
 
-import android.util.Log
 import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.mastersid.deliens.home.backend.HomeUtil

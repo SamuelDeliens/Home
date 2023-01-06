@@ -6,6 +6,9 @@ import dagger.hilt.android.AndroidEntryPoint
 import fr.mastersid.deliens.home.databinding.ActivityMainBinding
 
 @AndroidEntryPoint
+/**
+ * The main activity of the application.
+ */
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
