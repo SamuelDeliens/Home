@@ -7,23 +7,21 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.constraintlayout.helper.widget.Carousel
 import androidx.constraintlayout.motion.widget.MotionLayout
 import androidx.core.view.get
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.findFragment
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import dagger.hilt.android.AndroidEntryPoint
 import fr.mastersid.deliens.home.R
+import fr.mastersid.deliens.home.data.EstimationResult
 import fr.mastersid.deliens.home.databinding.FragmentCarousselBinding
-import fr.mastersid.deliens.home.databinding.FragmentListEstimationBinding
-import fr.mastersid.deliens.home.viewModel.CarousselViewModel
+import fr.mastersid.deliens.home.viewModel.ListEstimationViewModel
 
 @AndroidEntryPoint
 class CarouselFragment: Fragment() {
 
-    private lateinit var binding: FragmentCarousselBinding
-    private val carouselViewModel: CarousselViewModel by viewModels()
+    private var binding: FragmentCarousselBinding? = null
+    private val listEstimationViewModel: ListEstimationViewModel by activityViewModels()
 
     private var selectedIndex: Int = 0
     private var currentsId: MutableList<Int> = mutableListOf(3, 4, 0, 1, 2)
@@ -33,15 +31,24 @@ class CarouselFragment: Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentCarousselBinding.inflate(inflater)
-        return binding.root
+        val carouselFragment = FragmentCarousselBinding.inflate(inflater, container, false)
+        binding = carouselFragment
+        return carouselFragment.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        carouselViewModel.initEstimationList()
 
-        val motionLayout = binding.motionContainer
+        binding?.apply {
+            lifecycleOwner = viewLifecycleOwner
+            viewModel = listEstimationViewModel
+            carouselFragment = this@CarouselFragment
+        }
+
+        listEstimationViewModel.initEstimationList()
+
+
+        val motionLayout = binding!!.motionContainer
 
         val v1 = motionLayout.get(0) //BLUE
         val v2 = motionLayout.get(1) //ORANGE
@@ -72,17 +79,13 @@ class CarouselFragment: Fragment() {
         }
 
 
-        carouselViewModel.estimationList.observe(viewLifecycleOwner) { value ->
+        listEstimationViewModel.estimationList.observe(viewLifecycleOwner) { value ->
             if (value.isEmpty()) {
-                binding.motionContainer.visibility = View.GONE
                 return@observe
+            } else {
+                Log.d("debug", "updateList: ${value.size}")
+                initView(value)
             }
-
-            updateEstimation(0, binding.imageV1, binding.typeV1, binding.priceV1, binding.surfaceV1, binding.terrainV1, binding.roomsV1, binding.regionV1)
-            if (value.size >= 2) updateEstimation(1, binding.imageV2, binding.typeV2, binding.priceV2, binding.surfaceV2, binding.terrainV2, binding.roomsV2, binding.regionV2)
-            if (value.size >= 3) updateEstimation(2, binding.imageV3, binding.typeV3, binding.priceV3, binding.surfaceV3, binding.terrainV3, binding.roomsV3, binding.regionV3)
-            if (value.size >= 4) updateEstimation(3, binding.imageV4, binding.typeV4, binding.priceV4, binding.surfaceV4, binding.terrainV4, binding.roomsV4, binding.regionV4)
-            if (value.size >= 5) updateEstimation(4, binding.imageV5, binding.typeV5, binding.priceV5, binding.surfaceV5, binding.terrainV5, binding.roomsV5, binding.regionV5)
         }
     }
 
@@ -97,10 +100,10 @@ class CarouselFragment: Fragment() {
         }
 
         motionLayout.transitionToEnd()
-        updateEstimation(currentsId.first(), binding.imageV4, binding.typeV4, binding.priceV4, binding.surfaceV4, binding.terrainV4, binding.roomsV4, binding.regionV4)
-        updateEstimation(currentsId.last(), binding.imageV3, binding.typeV3, binding.priceV3, binding.surfaceV3, binding.terrainV3, binding.roomsV3, binding.regionV3)
+        updateEstimation(currentsId.first(), binding!!.imageV4, binding!!.typeV4, binding!!.priceV4, binding!!.surfaceV4, binding!!.terrainV4, binding!!.roomsV4, binding!!.regionV4)
+        updateEstimation(currentsId.last(), binding!!.imageV3, binding!!.typeV3, binding!!.priceV3, binding!!.surfaceV3, binding!!.terrainV3, binding!!.roomsV3, binding!!.regionV3)
+
         selectedIndex = 0
-        Log.d("debug", "setTo1: $selectedIndex")
     }
 
     fun setTo2(motionLayout: MotionLayout) {
@@ -113,10 +116,10 @@ class CarouselFragment: Fragment() {
         }
 
         motionLayout.transitionToEnd()
-        updateEstimation(currentsId.first(), binding.imageV5, binding.typeV5, binding.priceV5, binding.surfaceV5, binding.terrainV5, binding.roomsV5, binding.regionV5)
-        updateEstimation(currentsId.last(), binding.imageV4, binding.typeV4, binding.priceV4, binding.surfaceV4, binding.terrainV4, binding.roomsV4, binding.regionV4)
+        updateEstimation(currentsId.first(), binding!!.imageV5, binding!!.typeV5, binding!!.priceV5, binding!!.surfaceV5, binding!!.terrainV5, binding!!.roomsV5, binding!!.regionV5)
+        updateEstimation(currentsId.last(), binding!!.imageV4, binding!!.typeV4, binding!!.priceV4, binding!!.surfaceV4, binding!!.terrainV4, binding!!.roomsV4, binding!!.regionV4)
+
         selectedIndex = 1
-        Log.d("debug", "setTo2: $selectedIndex")
     }
 
     fun setTo3(motionLayout: MotionLayout) {
@@ -129,10 +132,10 @@ class CarouselFragment: Fragment() {
         }
 
         motionLayout.transitionToEnd()
-        updateEstimation(currentsId.first(), binding.imageV1, binding.typeV1, binding.priceV1, binding.surfaceV1, binding.terrainV1, binding.roomsV1, binding.regionV1)
-        updateEstimation(currentsId.last(), binding.imageV5, binding.typeV5, binding.priceV5, binding.surfaceV5, binding.terrainV5, binding.roomsV5, binding.regionV5)
+        updateEstimation(currentsId.first(), binding!!.imageV1, binding!!.typeV1, binding!!.priceV1, binding!!.surfaceV1, binding!!.terrainV1, binding!!.roomsV1, binding!!.regionV1)
+        updateEstimation(currentsId.last(), binding!!.imageV5, binding!!.typeV5, binding!!.priceV5, binding!!.surfaceV5, binding!!.terrainV5, binding!!.roomsV5, binding!!.regionV5)
+
         selectedIndex = 2
-        Log.d("debug", "setTo3: $selectedIndex")
     }
 
     fun setTo4(motionLayout: MotionLayout) {
@@ -145,10 +148,10 @@ class CarouselFragment: Fragment() {
         }
 
         motionLayout.transitionToEnd()
-        updateEstimation(currentsId.first(), binding.imageV2, binding.typeV2, binding.priceV2, binding.surfaceV2, binding.terrainV2, binding.roomsV2, binding.regionV2)
-        updateEstimation(currentsId.last(), binding.imageV1, binding.typeV1, binding.priceV1, binding.surfaceV1, binding.terrainV1, binding.roomsV1, binding.regionV1)
+        updateEstimation(currentsId.first(), binding!!.imageV2, binding!!.typeV2, binding!!.priceV2, binding!!.surfaceV2, binding!!.terrainV2, binding!!.roomsV2, binding!!.regionV2)
+        updateEstimation(currentsId.last(),binding!!.imageV1, binding!!.typeV1, binding!!.priceV1, binding!!.surfaceV1, binding!!.terrainV1, binding!!.roomsV1, binding!!.regionV1)
+
         selectedIndex = 3
-        Log.d("debug", "setTo4: $selectedIndex")
     }
 
     fun setTo5(motionLayout: MotionLayout) {
@@ -161,33 +164,32 @@ class CarouselFragment: Fragment() {
         }
 
         motionLayout.transitionToEnd()
-        updateEstimation(currentsId.first(), binding.imageV3, binding.typeV3, binding.priceV3, binding.surfaceV3, binding.terrainV3, binding.roomsV3, binding.regionV3)
-        updateEstimation(currentsId.last(), binding.imageV2, binding.typeV2, binding.priceV2, binding.surfaceV2, binding.terrainV2, binding.roomsV2, binding.regionV2)
+        updateEstimation(currentsId.first(), binding!!.imageV3, binding!!.typeV3, binding!!.priceV3, binding!!.surfaceV3, binding!!.terrainV3, binding!!.roomsV3, binding!!.regionV3)
+        updateEstimation(currentsId.last(), binding!!.imageV2, binding!!.typeV2, binding!!.priceV2, binding!!.surfaceV2, binding!!.terrainV2, binding!!.roomsV2, binding!!.regionV2)
         selectedIndex = 4
-        Log.d("debug", "setTo5: $selectedIndex")
     }
 
 
-    fun initView(motionLayout: MotionLayout) {
-        updateEstimation(currentsId[0], binding.imageV4, binding.typeV4, binding.priceV4, binding.surfaceV4, binding.terrainV4, binding.roomsV4, binding.regionV4)
-        updateEstimation(currentsId[1], binding.imageV5 ,binding.typeV5, binding.priceV5, binding.surfaceV5, binding.terrainV5, binding.roomsV5, binding.regionV5)
-        updateEstimation(currentsId[2], binding.imageV1, binding.typeV1, binding.priceV1, binding.surfaceV1, binding.terrainV1, binding.roomsV1, binding.regionV1)
-        updateEstimation(currentsId[3], binding.imageV2, binding.typeV2, binding.priceV2, binding.surfaceV2, binding.terrainV2, binding.roomsV2, binding.regionV2)
-        updateEstimation(currentsId[4], binding.imageV3, binding.typeV3, binding.priceV3, binding.surfaceV3, binding.terrainV3, binding.roomsV3, binding.regionV3)
+    fun initView(value: List<EstimationResult>) {
+        val size = value.size
+        //SIZE >= 1
+        updateEstimation(0, binding!!.imageV1, binding!!.typeV1, binding!!.priceV1, binding!!.surfaceV1, binding!!.terrainV1, binding!!.roomsV1, binding!!.regionV1)
+        if (size >= 2) updateEstimation(1, binding!!.imageV2, binding!!.typeV2, binding!!.priceV2, binding!!.surfaceV2, binding!!.terrainV2, binding!!.roomsV2, binding!!.regionV2)
+        if (size >= 3) updateEstimation(2, binding!!.imageV3, binding!!.typeV3, binding!!.priceV3, binding!!.surfaceV3, binding!!.terrainV3, binding!!.roomsV3, binding!!.regionV3)
+        if (size >= 4) updateEstimation(3, binding!!.imageV4, binding!!.typeV4, binding!!.priceV4, binding!!.surfaceV4, binding!!.terrainV4, binding!!.roomsV4, binding!!.regionV4)
+        if (size >= 5) updateEstimation(4, binding!!.imageV5, binding!!.typeV5, binding!!.priceV5, binding!!.surfaceV5, binding!!.terrainV5, binding!!.roomsV5, binding!!.regionV5)
     }
-
 
 
     fun nextEstimation() {
         currentsId.removeAt(0)
-        if (currentsId[3] < carouselViewModel.estimationList.value!!.size-1) {
+        if (currentsId[3] < listEstimationViewModel.estimationList.value!!.size-1) {
             currentsId.add(4, currentsId[3]+1)
         } else {
             currentsId.add(4, 0)
         }
         val first = currentsId.first()
         val last = currentsId.last()
-        Log.d("debug", "nextEstimation: first=$first last=$last")
     }
 
     fun previousEstimation() {
@@ -195,11 +197,10 @@ class CarouselFragment: Fragment() {
         if (currentsId[0] > 0) {
             currentsId.add(0,currentsId[0]-1)
         } else {
-            currentsId.add(0,carouselViewModel.estimationList.value!!.size-1)
+            currentsId.add(0,listEstimationViewModel.estimationList.value!!.size-1)
         }
         val first = currentsId.first()
         val last = currentsId.last()
-        Log.d("debug", "nextEstimation: first=$first last=$last")
     }
 
     fun updateEstimation(
@@ -212,12 +213,12 @@ class CarouselFragment: Fragment() {
         pieces: TextView,
         region: TextView
     ) {
-        val estimation = carouselViewModel.estimationList.value?.get(id)
+        val estimation = listEstimationViewModel.estimationList.value?.get(id)
         if (estimation != null) {
             if (estimation.propertyType == "Maison") {
-                image.setImageResource(R.drawable.ic_baseline_home_24)
+                image.setImageResource(R.drawable.maison)
             } else {
-                image.setImageResource(R.drawable.ic_baseline_home_work_24)
+                image.setImageResource(R.drawable.appart)
             }
             property.text = estimation.propertyType
             price.text = estimation.result.toString()
@@ -226,5 +227,11 @@ class CarouselFragment: Fragment() {
             pieces.text = estimation.pieces.toString()
             region.text = estimation.region
         }
+    }
+
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        binding = null
     }
 }

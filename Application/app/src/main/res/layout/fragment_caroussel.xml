@@ -22,19 +22,6 @@
         android:id="@+id/motion_container"
         app:layoutDescription="@xml/motion_scene_1">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:id="@+id/backImage"
-            android:src="@drawable/background_light"
-            android:visibility="gone"
-
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"/>
-
         <FrameLayout
             android:id="@+id/v1"
             android:layout_width="250dp"
