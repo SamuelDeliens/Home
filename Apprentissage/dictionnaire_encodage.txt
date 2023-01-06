@@ -1,0 +1,33 @@
+def encodage(df):
+    code = {'Vente':0,
+            'Adjudication':1,
+            "Vente en l'état futur d'achèvement":2,
+            'Maison':0,
+            'Appartement':1,
+            'S':0,
+            'AG':1,
+            'J':2,
+            'L':3,
+            'AB':4,
+            'sols':0,
+            "terrains d'agrément":1,
+            'jardins':2,
+            'landes':3,
+            'Terrain à bâtir':4,
+           '1':1,
+           '2':2,
+           '000AB':0, '000AC':1, '000AD':2, '000AE':3, '000AH':4, '000AI':5, 
+            '000AK':6, '000AO':7, '000AP':8,'000AR':9, '000AS':10, '000AT':11,
+            '000AV':12, '000AW':13 ,'000AX':14, '000AY':15, '000AZ':16,
+            '000BC':17,'000BD':18, '000BE':19, '000BH':20, '000BK':21,
+            '000BL':22,
+            '000BM':23,
+            '000BO':24,
+            '000BP':25,
+            '000BR':26,
+ '000BS':27, '000BT':28, '000BV':29,'000BW':30}
+    
+    for col in df.select_dtypes('object').columns:
+        df.loc[:,col] = df[col].map(code)
+        
+    return df

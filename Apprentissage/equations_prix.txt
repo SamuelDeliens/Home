@@ -1,0 +1,21 @@
+-----equation prix maison----------------------------------------------------------
+
+coef = [ 0.00000000e+00,  1.56556876e+03,  1.95966722e+04,  8.98006888e+01,
+        7.65267056e+01, -1.36436233e+02,  6.31053297e-01,  6.08622895e+00,
+       -2.27808753e+01, -1.47887928e+02,  2.44993526e-01]
+constant = -19587.326479585405
+
+def prix_maison(surf_bat, nb_piece, surf_terrain, section, coef, constant):
+    y= constant + coef[0]+coef[1]*surf_bat+coef[2]*nb_piece+coef[3]*surf_terrain+coef[4]*section + coef[5]*surf_bat*nb_piece+coef[6]*surf_bat*surf_terrain+coef[7]*surf_bat*section + coef[8]*nb_piece*surf_terrain+coef[9]*nb_piece*section + coef[10]*surf_terrain*section
+    return y
+
+
+
+------------equation prix appartement----------------------
+coef = [ 0.00000000e+00,  3.32656511e+03, -2.47891337e+04, -2.49033260e+04,
+       -1.10055465e+03, -6.34467833e+00,  3.66451410e+03]
+constant = 596167.5011129292
+
+def prix_appartement(surf_bat, nb_piece, section, coef, constant):
+    y= constant + coef[0]+coef[1]*surf_bat+coef[2]*nb_piece+coef[3]*section+coef[4]*surf_bat*nb_piece+coef[5]*surf_bat*section +coef[6]*nb_piece*section
+    return y
