@@ -219,11 +219,11 @@ class CarouselFragment: Fragment() {
                 image.setImageResource(R.drawable.appart)
             }
             property.text = estimation.propertyType
-            price.text = estimation.result.toString()
-            surface.text = estimation.surface.toString()
-            terrain.text = estimation.terrain.toString()
-            pieces.text = estimation.pieces.toString()
-            region.text = estimation.region
+            price.text = getString(R.string.ListEstimationPage_TextView_price, estimation.result)
+            surface.text = getString(R.string.ListEstimationPage_TextView_surface, estimation.surface)
+            terrain.text = getString(R.string.ListEstimationPage_TextView_terrain, estimation.terrain)
+            pieces.text = getString(R.string.ListEstimationPage_TextView_rooms, estimation.pieces)
+            region.text = getString(R.string.ListEstimationPage_TextView_region, estimation.region)
         }
     }
 

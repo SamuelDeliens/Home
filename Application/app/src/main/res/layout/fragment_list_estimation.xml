@@ -68,7 +68,7 @@
             android:layout_margin="30dp"
             android:background="@drawable/rounded"
 
-            android:text="@string/HomePage_ButtonEtimation_text"
+            android:text="@string/ListEstimationPage_ButtonEtimation_text"
             android:textAllCaps="false"
 
             app:layout_constraintBottom_toTopOf="@+id/goToNewEstimation"
