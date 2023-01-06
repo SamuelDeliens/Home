@@ -69,7 +69,7 @@ class EstimationFragment : Fragment() {
          * 2. On cache les EditText inutiles
          */
         binding.radioMaison.setOnClickListener {
-            binding.editTextTerrain.visibility = View.VISIBLE
+            binding.LayoutEditTextTerrain.visibility = View.VISIBLE
         }
 
         /**
@@ -77,7 +77,7 @@ class EstimationFragment : Fragment() {
          * 2. On affiche les EditText inutiles
          */
         binding.radioAppartement.setOnClickListener {
-            binding.editTextTerrain.visibility = View.GONE
+            binding.LayoutEditTextTerrain.visibility = View.GONE
         }
 
 
@@ -93,7 +93,7 @@ class EstimationFragment : Fragment() {
                 }
                 is EstimationResult.Estimated -> {
                     estimationResult.visibility = View.VISIBLE
-                    estimationResult.text = value.result.toString()
+                    estimationResult.text = getString(R.string.EstimationPage_TextView_text, value.result)
                     estimationResult.setTextColor(resources.getColor(R.color.black))
                 }
                 is EstimationResult.Failed -> {

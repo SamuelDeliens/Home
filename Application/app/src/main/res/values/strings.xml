@@ -12,17 +12,27 @@
 
     <!-- ListEstimationPage String. -->
     <string name="ListEstimationPage_Button_text">Estimated another</string>
+    <string name="ListEstimationPage_ButtonEtimation_text">Example Estimation</string>
+    <string name="ListEstimationPage_TextView_maion">Maison</string>
+    <string name="ListEstimationPage_TextView_price">Price: "%1$.2f" €</string>
+    <string name="ListEstimationPage_TextView_surface">Surface: "%1$.2f" m²</string>
+    <string name="ListEstimationPage_TextView_terrain">Terrain: "%1$.2f" m²</string>
+    <string name="ListEstimationPage_TextView_rooms">Rooms: "%1$d"</string>
+    <string name="ListEstimationPage_TextView_region">Region: "%1$s"</string>
+    <string name="ListEstimationPage_ImageView_property">IconProperty</string>
 
     <!-- EstimationPage String. -->
     <string name="EstimationPage_MenuBarBrand_text">Estimation</string>
     <string name="EstimationPage_Button_text">Estimer</string>
-    <string name="EstimationPage_TextView_text">Resultat Estimation</string>
+    <string name="EstimationPage_TextView_text">Price: "%1$.2f" €</string>
     <string name="EstimationPage_RadioButton_text">Maison</string>
     <string name="EstimationPage_RadioButton_text2">Appartement</string>
     <string name="EstimationPage_EditText_room">Room number</string>
     <string name="EstimationPage_EditText_surface">Surface (m²)</string>
     <string name="EstimationPage_EditText_terrain">Terrain (m²)</string>
-    <string name="HomePage_ButtonEtimation_text">Example Estimation</string>
+    <string name="EstimationPage_TextView_surface">Surface:</string>
+    <string name="EstimationPage_TextView_pieces">Pieces:</string>
+    <string name="EstimationPage_TextView_terrain">Terrain:</string>
     <string-array name="EstimationPage_Spinner_Region">
         <item>AB</item>
         <item>AC</item>

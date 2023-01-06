@@ -80,40 +80,90 @@
             android:layout_width="match_parent"
             android:layout_height="16dp"/>
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="wrap_content">
 
-            android:id="@+id/editTextRooms"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/EstimationPage_TextView_pieces"
+                android:textSize="20sp"/>
 
-            android:hint="@string/EstimationPage_EditText_room"
-            android:inputType="number" />
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/editTextRooms"
+
+                android:hint="@string/EstimationPage_EditText_room"
+                android:inputType="number" />
+        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="16dp"/>
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="wrap_content">
 
-            android:id="@+id/editTextSurface"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/EstimationPage_TextView_surface"
+                android:textSize="20sp"/>
 
-            android:hint="@string/EstimationPage_EditText_surface"
-            android:inputType="numberDecimal" />
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:id="@+id/editTextSurface"
+
+                android:hint="@string/EstimationPage_EditText_surface"
+                android:inputType="numberDecimal" />
+
+        </LinearLayout>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="16dp" />
 
-        <EditText
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/LayoutEditTextTerrain">
 
-            android:id="@+id/editTextTerrain"
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/EstimationPage_TextView_terrain"
+                android:textSize="20sp"/>
 
-            android:hint="@string/EstimationPage_EditText_terrain"
-            android:inputType="numberDecimal"/>
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="wrap_content"/>
+
+            <EditText
+                android:id="@+id/editTextTerrain"
+                android:layout_width="match_parent"
+
+                android:layout_height="wrap_content"
+
+                android:hint="@string/EstimationPage_EditText_terrain"
+                android:inputType="numberDecimal" />
+
+        </LinearLayout>
+
+
 
         <Space
             android:layout_width="match_parent"

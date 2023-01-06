@@ -22,7 +22,7 @@
 
             <TextView
                 android:id="@+id/typeV1"
-                android:text="Maison"
+                android:text="@string/ListEstimationPage_TextView_maion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -33,7 +33,8 @@
                 android:id="@+id/imageV1"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_baseline_home_24" />
+                android:src="@drawable/ic_baseline_home_24"
+                android:contentDescription="@string/ListEstimationPage_ImageView_property" />
 
             <Space
                 android:layout_width="match_parent"
@@ -41,7 +42,7 @@
 
             <TextView
                 android:id="@+id/priceV1"
-                android:text="Price"
+                android:text="@string/ListEstimationPage_TextView_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -52,35 +53,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="16dp"/>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <TextView
                 android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorOnPrimary"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="3dp" />
+
+            <TextView
+                android:id="@+id/surfaceV1"
+                android:text="@string/ListEstimationPage_TextView_surface"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_horizontal">
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp" android:textStyle="bold"/>
 
-                <TextView
-                    android:id="@+id/surfaceV1"
-                    android:text="PURPLE"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp" android:textStyle="bold"/>
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="16dp"/>
 
-                <Space
-                    android:layout_width="16dp"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:id="@+id/terrainV1"
-                    android:text="PURPLE"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp" android:textStyle="bold"/>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
+            <TextView
+                android:id="@+id/terrainV1"
+                android:text="@string/ListEstimationPage_TextView_terrain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp" android:textStyle="bold"/>
 
             <Space
                 android:layout_width="wrap_content"
@@ -94,7 +96,7 @@
 
                 <TextView
                     android:id="@+id/roomsV1"
-                    android:text="PURPLE"
+                    android:text="@string/ListEstimationPage_TextView_rooms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -107,7 +109,7 @@
 
                 <TextView
                     android:id="@+id/regionV1"
-                    android:text="PURPLE"
+                    android:text="@string/ListEstimationPage_TextView_region"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -138,7 +140,7 @@
 
             <TextView
                 android:id="@+id/typeV2"
-                android:text="Maison"
+                android:text="@string/ListEstimationPage_TextView_maion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -149,7 +151,8 @@
                 android:id="@+id/imageV2"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_baseline_home_24" />
+                android:src="@drawable/ic_baseline_home_24"
+                android:contentDescription="@string/ListEstimationPage_ImageView_property" />
 
             <Space
                 android:layout_width="match_parent"
@@ -157,7 +160,7 @@
 
             <TextView
                 android:id="@+id/priceV2"
-                android:text="Price"
+                android:text="@string/ListEstimationPage_TextView_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -168,35 +171,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="16dp"/>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <TextView
                 android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorOnPrimary"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="3dp" />
+
+
+            <TextView
+                android:id="@+id/surfaceV2"
+                android:text="@string/ListEstimationPage_TextView_surface"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_horizontal">
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp" android:textStyle="bold"/>
 
-                <TextView
-                    android:id="@+id/surfaceV2"
-                    android:text="PURPLE"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp" android:textStyle="bold"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp"/>
 
-                <Space
-                    android:layout_width="16dp"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:id="@+id/terrainV2"
-                    android:text="PURPLE"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp" android:textStyle="bold"/>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
+            <TextView
+                android:id="@+id/terrainV2"
+                android:text="@string/ListEstimationPage_TextView_terrain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp" android:textStyle="bold"/>
 
             <Space
                 android:layout_width="wrap_content"
@@ -210,7 +215,7 @@
 
                 <TextView
                     android:id="@+id/roomsV2"
-                    android:text="PURPLE"
+                    android:text="@string/ListEstimationPage_TextView_rooms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -223,7 +228,7 @@
 
                 <TextView
                     android:id="@+id/regionV2"
-                    android:text="PURPLE"
+                    android:text="@string/ListEstimationPage_TextView_region"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -254,7 +259,7 @@
 
             <TextView
                 android:id="@+id/typeV3"
-                android:text="Maison"
+                android:text="@string/ListEstimationPage_TextView_maion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -265,7 +270,8 @@
                 android:id="@+id/imageV3"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_baseline_home_24" />
+                android:src="@drawable/ic_baseline_home_24"
+                android:contentDescription="@string/ListEstimationPage_ImageView_property" />
 
             <Space
                 android:layout_width="match_parent"
@@ -273,7 +279,7 @@
 
             <TextView
                 android:id="@+id/priceV3"
-                android:text="Price"
+                android:text="@string/ListEstimationPage_TextView_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -284,35 +290,37 @@
                 android:layout_width="match_parent"
                 android:layout_height="16dp"/>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <TextView
                 android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorOnPrimary"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="3dp" />
+
+
+            <TextView
+                android:id="@+id/surfaceV3"
+                android:text="@string/ListEstimationPage_TextView_surface"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_horizontal">
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp" android:textStyle="bold"/>
 
-                <TextView
-                    android:id="@+id/surfaceV3"
-                    android:text="PURPLE"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp" android:textStyle="bold"/>
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="16dp"/>
 
-                <Space
-                    android:layout_width="16dp"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:id="@+id/terrainV3"
-                    android:text="PURPLE"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp" android:textStyle="bold"/>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
+            <TextView
+                android:id="@+id/terrainV3"
+                android:text="@string/ListEstimationPage_TextView_terrain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp" android:textStyle="bold"/>
 
             <Space
                 android:layout_width="wrap_content"
@@ -326,7 +334,7 @@
 
                 <TextView
                     android:id="@+id/roomsV3"
-                    android:text="PURPLE"
+                    android:text="@string/ListEstimationPage_TextView_rooms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -339,7 +347,7 @@
 
                 <TextView
                     android:id="@+id/regionV3"
-                    android:text="PURPLE"
+                    android:text="@string/ListEstimationPage_TextView_region"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -370,7 +378,7 @@
 
             <TextView
                 android:id="@+id/typeV4"
-                android:text="Maison"
+                android:text="@string/ListEstimationPage_TextView_maion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -381,7 +389,8 @@
                 android:id="@+id/imageV4"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_baseline_home_24" />
+                android:src="@drawable/ic_baseline_home_24"
+                android:contentDescription="@string/ListEstimationPage_ImageView_property" />
 
             <Space
                 android:layout_width="match_parent"
@@ -389,7 +398,7 @@
 
             <TextView
                 android:id="@+id/priceV4"
-                android:text="Price"
+                android:text="@string/ListEstimationPage_TextView_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -400,35 +409,36 @@
                 android:layout_width="match_parent"
                 android:layout_height="16dp"/>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <TextView
                 android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorOnPrimary"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="3dp" />
+
+            <TextView
+                android:id="@+id/surfaceV4"
+                android:text="@string/ListEstimationPage_TextView_surface"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_horizontal">
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp" android:textStyle="bold"/>
 
-                <TextView
-                    android:id="@+id/surfaceV4"
-                    android:text="PURPLE"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp" android:textStyle="bold"/>
+            <Space
+                android:layout_width="16dp"
+                android:layout_height="16dp"/>
 
-                <Space
-                    android:layout_width="16dp"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:id="@+id/terrainV4"
-                    android:text="PURPLE"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:textColor="@android:color/background_light"
-                    android:textSize="18sp" android:textStyle="bold"/>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
+            <TextView
+                android:id="@+id/terrainV4"
+                android:text="@string/ListEstimationPage_TextView_terrain"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:textColor="@android:color/background_light"
+                android:textSize="18sp" android:textStyle="bold"/>
 
             <Space
                 android:layout_width="wrap_content"
@@ -442,7 +452,7 @@
 
                 <TextView
                     android:id="@+id/roomsV4"
-                    android:text="PURPLE"
+                    android:text="@string/ListEstimationPage_TextView_rooms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -455,7 +465,7 @@
 
                 <TextView
                     android:id="@+id/regionV4"
-                    android:text="PURPLE"
+                    android:text="@string/ListEstimationPage_TextView_region"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -486,7 +496,7 @@
 
             <TextView
                 android:id="@+id/typeV5"
-                android:text="Maison"
+                android:text="@string/ListEstimationPage_TextView_maion"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -497,7 +507,8 @@
                 android:id="@+id/imageV5"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
-                android:src="@drawable/ic_baseline_home_24" />
+                android:src="@drawable/ic_baseline_home_24"
+                android:contentDescription="@string/ListEstimationPage_ImageView_property" />
 
             <Space
                 android:layout_width="match_parent"
@@ -505,7 +516,7 @@
 
             <TextView
                 android:id="@+id/priceV5"
-                android:text="Price"
+                android:text="@string/ListEstimationPage_TextView_price"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -516,15 +527,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="16dp"/>
 
-            <androidx.appcompat.widget.LinearLayoutCompat
+            <TextView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center_horizontal">
+                android:layout_height="1dp"
+                android:background="@color/colorOnPrimary"/>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="3dp" />
 
             <TextView
                 android:id="@+id/surfaceV5"
-                android:text="PURPLE"
+                android:text="@string/ListEstimationPage_TextView_surface"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -532,19 +546,17 @@
                 android:textSize="18sp" android:textStyle="bold"/>
 
             <Space
-                android:layout_width="16dp"
-                android:layout_height="wrap_content"/>
+                android:layout_width="wrap_content"
+                android:layout_height="16dp"/>
 
             <TextView
                 android:id="@+id/terrainV5"
-                android:text="PURPLE"
+                android:text="@string/ListEstimationPage_TextView_terrain"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:textColor="@android:color/background_light"
                 android:textSize="18sp" android:textStyle="bold"/>
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
 
             <Space
                 android:layout_width="wrap_content"
@@ -558,7 +570,7 @@
 
                 <TextView
                     android:id="@+id/roomsV5"
-                    android:text="PURPLE"
+                    android:text="@string/ListEstimationPage_TextView_rooms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -571,7 +583,7 @@
 
                 <TextView
                     android:id="@+id/regionV5"
-                    android:text="PURPLE"
+                    android:text="@string/ListEstimationPage_TextView_region"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
