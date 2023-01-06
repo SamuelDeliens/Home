@@ -46,7 +46,12 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:textColor="@android:color/background_light"
-                    android:textSize="24sp" android:textStyle="bold"/>
+                    android:textSize="24sp"
+                    android:fontFamily="@font/inter_bold" />
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
 
                 <ImageView
                     android:id="@+id/imageV1"
@@ -56,7 +61,7 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="10dp" />
 
                 <TextView
                     android:id="@+id/priceV1"
@@ -164,6 +169,10 @@
                     android:textColor="@android:color/background_light"
                     android:textSize="24sp" android:textStyle="bold"/>
 
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
                 <ImageView
                     android:id="@+id/imageV2"
                     android:layout_width="match_parent"
@@ -172,7 +181,7 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="10dp" />
 
                 <TextView
                     android:id="@+id/priceV2"
@@ -280,6 +289,10 @@
                     android:textColor="@android:color/background_light"
                     android:textSize="24sp" android:textStyle="bold"/>
 
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
                 <ImageView
                     android:id="@+id/imageV3"
                     android:layout_width="match_parent"
@@ -288,7 +301,7 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="10dp" />
 
                 <TextView
                     android:id="@+id/priceV3"
@@ -396,6 +409,10 @@
                     android:textColor="@android:color/background_light"
                     android:textSize="24sp" android:textStyle="bold"/>
 
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
                 <ImageView
                     android:id="@+id/imageV4"
                     android:layout_width="match_parent"
@@ -404,7 +421,7 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="10dp" />
 
                 <TextView
                     android:id="@+id/priceV4"
@@ -512,6 +529,10 @@
                     android:textColor="@android:color/background_light"
                     android:textSize="24sp" android:textStyle="bold"/>
 
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp" />
+
                 <ImageView
                     android:id="@+id/imageV5"
                     android:layout_width="match_parent"
@@ -520,7 +541,7 @@
 
                 <Space
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_height="10dp" />
 
                 <TextView
                     android:id="@+id/priceV5"

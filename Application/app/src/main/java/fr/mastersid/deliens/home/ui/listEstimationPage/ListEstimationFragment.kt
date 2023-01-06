@@ -8,8 +8,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import dagger.hilt.android.AndroidEntryPoint
+import fr.mastersid.deliens.home.R
 import fr.mastersid.deliens.home.databinding.FragmentListEstimationBinding
 import fr.mastersid.deliens.home.viewModel.ListEstimationViewModel
+import android.view.animation.AnimationUtils
 
 @AndroidEntryPoint
 class ListEstimationFragment : Fragment() {
@@ -36,7 +38,14 @@ class ListEstimationFragment : Fragment() {
             listEstimationFragment = this@ListEstimationFragment
         }
 
-        binding!!.goToNewEstimation.setOnClickListener() {
+        binding!!.initEstimation.setOnClickListener {
+            listEstimationViewModel.initEstimationList()
+            val animation = AnimationUtils.loadAnimation(context, R.anim.fade_out)
+            binding!!.initEstimation.startAnimation(animation)
+            binding!!.initEstimation.visibility = View.INVISIBLE
+        }
+
+        binding!!.goToNewEstimation.setOnClickListener {
             val action = ListEstimationFragmentDirections.actionListEstimationToEstimationFragment()
             findNavController().navigate(action)
         }
@@ -44,10 +53,20 @@ class ListEstimationFragment : Fragment() {
 
         listEstimationViewModel.estimationList.observe(viewLifecycleOwner) { value ->
             if (value.isEmpty()) {
+                val animation1 = AnimationUtils.loadAnimation(context, R.anim.fade_out)
+                binding!!.backImage.startAnimation(animation1)
+                val animation2 = AnimationUtils.loadAnimation(context, R.anim.fade_in)
+                binding!!.backImage.startAnimation(animation2)
+
                 binding!!.backImage.visibility = View.VISIBLE
                 binding!!.fragmentCarousel2.visibility = View.GONE
                 return@observe
             } else {
+                val animation1 = AnimationUtils.loadAnimation(context, R.anim.fade_in)
+                binding!!.backImage.startAnimation(animation1)
+                val animation2 = AnimationUtils.loadAnimation(context, R.anim.fade_out)
+                binding!!.backImage.startAnimation(animation2)
+
                 binding!!.backImage.visibility = View.GONE
                 binding!!.fragmentCarousel2.visibility = View.VISIBLE
             }

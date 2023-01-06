@@ -22,6 +22,7 @@
     <string name="EstimationPage_EditText_room">Room number</string>
     <string name="EstimationPage_EditText_surface">Surface (m²)</string>
     <string name="EstimationPage_EditText_terrain">Terrain (m²)</string>
+    <string name="HomePage_ButtonEtimation_text">Example Estimation</string>
     <string-array name="EstimationPage_Spinner_Region">
         <item>AB</item>
         <item>AC</item>
