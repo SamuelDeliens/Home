@@ -1,10 +1,33 @@
 package fr.mastersid.deliens.home.backend
 
-import android.util.Log
 import javax.inject.Inject
 
+/**
+ * Created by Samuel Deliens and Wassim Briane on 2021-01-18.
+ *
+ * Implementation of the HomeUtil interface.
+ * This class is used to estimate the price of a property.
+ *
+ * Arguments:
+ * ----------
+ * propertyType: String => The type of the property. Can be "Maison" or "Appartement".
+ * pieces: Int => The number of pieces in the property.
+ * surfaceInside: Float => The surface of the property inside.
+ * surfaceOutside: Float? => The surface of the property outside. Only used for "Maison".
+ * region: String => The region of the property. Can be "AB", "AC", "AD", "AE", "AH", "AI", "AK", "AO", "AP", "AR", "AS", "AT", "AV", "AW", "AX", "AY", "AZ", "BC", "BD", "BE", "BH", "BK", "BL", "BM", "BO", "BP", "BR", "BS", "BT", "BV", "BW".
+ *
+ * Returns:
+ * --------
+ * Float => The estimated price of the property.
+ */
 class HomeUtilImpl @Inject constructor(): HomeUtil {
 
+    /**
+     * Parameters for the estimation:
+     *
+     * propertyMapping: Map<String, Float> => The mapping between the property type and the coefficient.
+     * regionMapping: Map<String, Float> => The mapping between the region and the coefficient.
+     */
     private val propertyMapping = mapOf(
         "Maison" to 1,
         "Appartement" to 2,
@@ -19,6 +42,18 @@ class HomeUtilImpl @Inject constructor(): HomeUtil {
         "BS" to 27, "BT" to 28, "BV" to 29, "BW" to 30
     )
 
+
+    /**
+     * Parameters for the estimation:
+     *
+     * Maison:
+     * coefMaison: FloatArray => The coefficients for the estimation of a "Maison".
+     * constantMaison: Float => The constant for the estimation of a "Maison".
+     *
+     * Appartement:
+     * coefAppartement: FloatArray => The coefficients for the estimation of an "Appartement".
+     * constantAppartement: Float => The constant for the estimation of an "Appartement".
+     */
     private val coefMaison = listOf(
         0.00000000e+00,  1.56556876e+03,  1.95966722e+04,  8.98006888e+01,
         7.65267056e+01, -1.36436233e+02,  6.31053297e-01,  6.08622895e+00,
@@ -34,6 +69,15 @@ class HomeUtilImpl @Inject constructor(): HomeUtil {
     val constantAppartement = 596167.5011129292
 
 
+    /**
+     * Estimate the price of a property.
+     * @param propertyType: String => The type of the property. Can be "Maison" or "Appartement".
+     * @param pieces: Int => The number of pieces in the property.
+     * @param surfaceInside: Float => The surface of the property inside.
+     * @param surfaceOutside: Float? => The surface of the property outside. Only used for "Maison".
+     *
+     * @return Float => The estimated price of the property.
+     */
     override fun estimation(propertyType: String, pieces: Int, surfaceInside: Float, surfaceOutside: Float?, region: String): Float {
 
         val intPropertyType = propertyMapping[propertyType]!!
@@ -48,6 +92,15 @@ class HomeUtilImpl @Inject constructor(): HomeUtil {
     }
 
 
+    /**
+     * Estimate the price of a "Appartement".
+     * @param pieces: Int => The number of pieces in the property.
+     * @param surfaceInside: Float => The surface of the property inside.
+     * @param surfaceOutside: Float => The surface of the property outside.
+     * @param region: Int => The region of the property.
+     *
+     * @return Float => The estimated price of the property.
+     */
     private fun estimationAppartement(pieces: Int, surfaceInside: Float, region: Int): Float {
         return (
                 constantAppartement +
@@ -61,6 +114,15 @@ class HomeUtilImpl @Inject constructor(): HomeUtil {
                 ).toFloat()
     }
 
+    /**
+     * Estimate the price of a "Maison".
+     * @param pieces: Int => The number of pieces in the property.
+     * @param surfaceInside: Float => The surface of the property inside.
+     * @param surfaceOutside: Float => The surface of the property outside.
+     * @param region: Int => The region of the property.
+     *
+     * @return Float => The estimated price of the property.
+     */
     private fun estimationMaison(pieces: Int, surfaceInside: Float, surfaceOutside: Float, region: Int): Float {
         return (
                 constantMaison
