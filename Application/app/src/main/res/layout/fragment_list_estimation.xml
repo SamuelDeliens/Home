@@ -1,41 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-xmlns:android="http://schemas.android.com/apk/res/android"
-xmlns:app="http://schemas.android.com/apk/res-auto"
-xmlns:tools="http://schemas.android.com/tools"
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
 
-android:layout_width="match_parent"
-android:layout_height="match_parent">
+    tools:context=".ui.listEstimationPage.ListEstimationFragment">
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragmentCarousel2"
-        android:name="fr.mastersid.deliens.home.ui.listEstimationPage.CarouselFragment"
+    <data>
+        <variable
+            name="viewModel"
+            type="fr.mastersid.deliens.home.viewModel.ListEstimationViewModel" />
 
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        <variable
+            name="ListEstimationFragment"
+            type="fr.mastersid.deliens.home.ui.listEstimationPage.ListEstimationFragment" />
+    </data>
 
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
 
-        tools:context=".ui.MainActivity"
-        tools:layout="@layout/fragment_caroussel" />
-
-<Button
+    <androidx.constraintlayout.widget.ConstraintLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="30dp"
-    android:textAllCaps="false"
-    android:background="@drawable/rounded"
+    android:layout_height="match_parent">
 
-    android:id="@+id/goToNewEstimation"
-    android:text="@string/ListEstimationPage_Button_text"
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toEndOf="@id/fragmentCarousel2"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/fragmentCarousel2" />
+            android:id="@+id/backImage"
+            android:src="@drawable/background_light"
+            android:visibility="gone"
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+        <androidx.fragment.app.FragmentContainerView
+            android:id="@+id/fragmentCarousel2"
+            android:name="fr.mastersid.deliens.home.ui.listEstimationPage.CarouselFragment"
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            tools:context=".ui.MainActivity"
+            tools:layout="@layout/fragment_caroussel" />
+
+        <Button
+            android:id="@+id/goToNewEstimation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:background="@drawable/rounded"
+
+            android:text="@string/ListEstimationPage_Button_text"
+            android:textAllCaps="false"
+
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/fragmentCarousel2"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

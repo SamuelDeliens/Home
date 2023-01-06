@@ -1,12 +1,12 @@
 package fr.mastersid.deliens.home.viewModel
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.SavedStateHandle
-import androidx.lifecycle.ViewModel
+import android.util.Log
+import androidx.lifecycle.*
 import dagger.hilt.android.lifecycle.HiltViewModel
 import fr.mastersid.deliens.home.backend.HomeUtil
 import fr.mastersid.deliens.home.data.EstimationResult
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 private const val STATE_ESTIMATION_RESULT = "state_estimation_result"
@@ -25,17 +25,26 @@ class EstimationViewModel @Inject constructor(
     val estimationList: LiveData<List<EstimationResult.Estimated>> = _estimationList
 
     fun estimation(propertyType: String, pieces: Int?, surfaceInside: Float?, surfaceOutside: Float?, region: String) {
-        try {
-            if (pieces == null || surfaceInside == null || (surfaceOutside == null && propertyType == "Maison")) {
-                throw IllegalArgumentException("Missing arguments")
-            } else {
-                val estimation = homeUtil.estimation(propertyType, pieces, surfaceInside, surfaceOutside, region)
-
-                _resultEstimation.value = EstimationResult.Estimated(propertyType, pieces, surfaceInside, region, estimation)
-                _estimationList.value = _estimationList.value!! + listOf(EstimationResult.Estimated(propertyType, pieces, surfaceInside, region, estimation))
+        viewModelScope.launch(Dispatchers.Default) {
+            try {
+                if (pieces == null || surfaceInside == null || (surfaceOutside == null && propertyType == "Maison")) {
+                    throw IllegalArgumentException("Missing arguments")
+                } else {
+                    val estimation = homeUtil.estimation(propertyType, pieces, surfaceInside, surfaceOutside, region)
+                    _resultEstimation.postValue(
+                        EstimationResult.Estimated(propertyType, pieces, surfaceInside, surfaceOutside, region, estimation)
+                    )
+                    _estimationList.postValue(
+                        _estimationList.value!! + listOf(EstimationResult.Estimated(propertyType, pieces, surfaceInside, surfaceOutside, region, estimation))
+                    )
+                }
+            } catch (e: IllegalArgumentException) {
+                _resultEstimation.postValue(
+                    EstimationResult.Failed(e.message!!)
+                )
             }
-        } catch (e: IllegalArgumentException) {
-            _resultEstimation.value = EstimationResult.Failed(e.message!!)
         }
+
+
     }
 }

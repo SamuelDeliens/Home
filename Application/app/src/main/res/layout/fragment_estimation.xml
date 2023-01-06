@@ -88,12 +88,11 @@
         android:id="@+id/editTextSurface"
 
         android:hint="@string/EstimationPage_EditText_surface"
-        android:inputType="number" />
+        android:inputType="numberDecimal" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="16dp"
-        android:inputType="number"/>
+        android:layout_height="16dp" />
 
     <EditText
         android:layout_width="match_parent"
@@ -102,7 +101,7 @@
         android:id="@+id/editTextTerrain"
 
         android:hint="@string/EstimationPage_EditText_terrain"
-        android:inputType="number"/>
+        android:inputType="numberDecimal"/>
 
     <Space
         android:layout_width="match_parent"

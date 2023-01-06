@@ -42,7 +42,6 @@ class EstimationFragment : Fragment() {
                 binding.root.findViewById(id)
             }
             val region = binding.spinner.selectedItem.toString()
-
             estimationViewModel.estimation(
                 propertyType.text.toString(),
                 binding.editTextRooms.text.toString().toIntOrNull(),
