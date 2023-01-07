@@ -34,3 +34,9 @@ Voici les fonctionnalités prévues pour cette application :
 
 - Android Studio pour le développement de l'application Android
 - Un modèle de machine learning pour l'estimation de prix des biens immobiliers
+
+-----
+
+#### Licence
+
+Ce projet est sous licence Apache Licence 2.0. Vous pouvez trouver une copie de cette licence dans le fichier [LICENSE](https://github.com/SamuelDeliens/Home/blob/Ajout-hors-projet-(README)/LICENSE.md).
