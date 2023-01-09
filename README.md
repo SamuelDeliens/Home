@@ -3,7 +3,7 @@
 **Samuel Deliens & Wassim Braine**
 
 
-Demo available on https://www.youtube.com/embed/16mCcp8oB7Q
+Demo available on [Video](https://www.youtube.com/embed/16mCcp8oB7Q)
 
 Projet d'estimation de prix de biens immobiliers
 
